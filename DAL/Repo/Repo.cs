@@ -6,10 +6,10 @@ namespace DAL.Repo
 {
 	public class Repo
 	{
-		internal AppDbContext Context;
+		internal AppDbContext context;
 		public Repo(DbContextOptions<AppDbContext> options)
 		{
-			Context = new AppDbContext(options);
+            context = new AppDbContext(options);
 		}
 	}
 }
