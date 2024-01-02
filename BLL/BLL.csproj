@@ -16,5 +16,14 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="DTOs\" />
+    <None Remove="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTOs\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 </Project>

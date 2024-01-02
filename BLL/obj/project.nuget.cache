@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "RULdCYTY00XJKuPMduDWrc1xVIkb3Qir19c0yDTvree5qQ0soTMlopIgvLtQgRQFTO05xy7RK9UrSOO9vnIuIA==",
+  "dgSpecHash": "+jsMLwrVTJtmMj8ePBGLRCSXyhU3alpGNSPaZYCZvScA/4/E/xdN7JVSZz6uNA0Qp4xE8vrulPfF3VjZ4G9fag==",
   "success": true,
   "projectFilePath": "/Users/jubair/Developer/Projects/DOT-net-final/BLL/BLL.csproj",
   "expectedPackageFiles": [
+    "/Users/jubair/.nuget/packages/automapper/10.0.0/automapper.10.0.0.nupkg.sha512",
     "/Users/jubair/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/jubair/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/jubair/.nuget/packages/microsoft.entityframeworkcore/7.0.0/microsoft.entityframeworkcore.7.0.0.nupkg.sha512",
     "/Users/jubair/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.0/microsoft.entityframeworkcore.abstractions.7.0.0.nupkg.sha512",
     "/Users/jubair/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.0/microsoft.entityframeworkcore.analyzers.7.0.0.nupkg.sha512",
@@ -25,6 +27,7 @@
     "/Users/jubair/.nuget/packages/npgsql/7.0.0/npgsql.7.0.0.nupkg.sha512",
     "/Users/jubair/.nuget/packages/npgsql.entityframeworkcore.postgresql/7.0.0/npgsql.entityframeworkcore.postgresql.7.0.0.nupkg.sha512",
     "/Users/jubair/.nuget/packages/system.codedom/4.4.0/system.codedom.4.4.0.nupkg.sha512",
+    "/Users/jubair/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
     "/Users/jubair/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
     "/Users/jubair/.nuget/packages/system.text.encodings.web/7.0.0/system.text.encodings.web.7.0.0.nupkg.sha512",
     "/Users/jubair/.nuget/packages/system.text.json/7.0.0/system.text.json.7.0.0.nupkg.sha512"

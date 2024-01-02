@@ -14,32 +14,32 @@ namespace DAL.Repo
 
         public Conversion Create(Conversion obj)
         {
-            Context.Conversions.Add(obj);
-            return Context.SaveChanges() > 0 ? obj : null;
+            context.Conversions.Add(obj);
+            return context.SaveChanges() > 0 ? obj : null;
         }
 
         public bool Delete(string id)
         {
             var obj = Get(id);
-            Context.Conversions.Remove(obj);
-            return Context.SaveChanges() > 0 ? true : false;
+            context.Conversions.Remove(obj);
+            return context.SaveChanges() > 0 ? true : false;
         }
 
         public List<Conversion> Get()
         {
-            return Context.Conversions.ToList();
+            return context.Conversions.ToList();
         }
 
         public Conversion Get(string id)
         {
-            return Context.Conversions.Find(id);
+            return context.Conversions.Find(id);
         }
 
         public Conversion Update(Conversion obj)
         {
             var con = Get(obj.CampaignId.ToString());
-            Context.Entry(con).CurrentValues.SetValues(obj);
-            return Context.SaveChanges() > 0 ? obj : null;
+            context.Entry(con).CurrentValues.SetValues(obj);
+            return context.SaveChanges() > 0 ? obj : null;
         }
     }
 }
