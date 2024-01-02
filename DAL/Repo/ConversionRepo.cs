@@ -1,11 +1,17 @@
 ﻿using System;
 using DAL.Interfaces;
+using DAL.Model;
 using DAL.Model.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repo
 {
     public class ConversionRepo : Repo, IRepo<Conversion, string, Conversion>
     {
+        public ConversionRepo(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
+
         public Conversion Create(Conversion obj)
         {
             Context.Conversions.Add(obj);

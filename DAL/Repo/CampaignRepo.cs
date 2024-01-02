@@ -1,11 +1,18 @@
 ﻿using System;
 using DAL.Interfaces;
+using DAL.Model;
 using DAL.Model.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repo
 {
-    public class CampaignRepo : Repo, IRepo<Campaign, String, Campaign>
+    public class CampaignRepo : Repo, IRepo<Campaign, string, Campaign>
     {
+       
+        public CampaignRepo(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
+
         public Campaign Create(Campaign obj)
         {
             Context.Campaigns.Add(obj);

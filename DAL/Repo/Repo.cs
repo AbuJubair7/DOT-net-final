@@ -1,14 +1,15 @@
 ﻿using System;
 using DAL.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repo
 {
 	public class Repo
 	{
 		internal AppDbContext Context;
-		public Repo()
+		public Repo(DbContextOptions<AppDbContext> options)
 		{
-			//Context = new AppDbContext();
+			Context = new AppDbContext(options);
 		}
 	}
 }
