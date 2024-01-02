@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/jubair/Developer/Projects/Main/DAL/DAL.csproj": {}
+    "/Users/jubair/Developer/Projects/DOT-net-final/DAL/DAL.csproj": {}
   },
   "projects": {
-    "/Users/jubair/Developer/Projects/Main/DAL/DAL.csproj": {
+    "/Users/jubair/Developer/Projects/DOT-net-final/DAL/DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/jubair/Developer/Projects/Main/DAL/DAL.csproj",
+        "projectUniqueName": "/Users/jubair/Developer/Projects/DOT-net-final/DAL/DAL.csproj",
         "projectName": "DAL",
-        "projectPath": "/Users/jubair/Developer/Projects/Main/DAL/DAL.csproj",
+        "projectPath": "/Users/jubair/Developer/Projects/DOT-net-final/DAL/DAL.csproj",
         "packagesPath": "/Users/jubair/.nuget/packages/",
-        "outputPath": "/Users/jubair/Developer/Projects/Main/DAL/obj/",
+        "outputPath": "/Users/jubair/Developer/Projects/DOT-net-final/DAL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/jubair/.nuget/NuGet/NuGet.Config"

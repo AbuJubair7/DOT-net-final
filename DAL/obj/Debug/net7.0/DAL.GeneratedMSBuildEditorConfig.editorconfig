@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = DAL
-build_property.ProjectDir = /Users/jubair/Developer/Projects/Main/DAL/
+build_property.ProjectDir = /Users/jubair/Developer/Projects/DOT-net-final/DAL/

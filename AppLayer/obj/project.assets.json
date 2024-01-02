@@ -1114,11 +1114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jubair/Developer/Projects/Main/AppLayer/AppLayer.csproj",
+      "projectUniqueName": "/Users/jubair/Developer/Projects/DOT-net-final/AppLayer/AppLayer.csproj",
       "projectName": "AppLayer",
-      "projectPath": "/Users/jubair/Developer/Projects/Main/AppLayer/AppLayer.csproj",
+      "projectPath": "/Users/jubair/Developer/Projects/DOT-net-final/AppLayer/AppLayer.csproj",
       "packagesPath": "/Users/jubair/.nuget/packages/",
-      "outputPath": "/Users/jubair/Developer/Projects/Main/AppLayer/obj/",
+      "outputPath": "/Users/jubair/Developer/Projects/DOT-net-final/AppLayer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/jubair/.nuget/NuGet/NuGet.Config"
@@ -1134,8 +1134,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "/Users/jubair/Developer/Projects/Main/BLL/BLL.csproj": {
-              "projectPath": "/Users/jubair/Developer/Projects/Main/BLL/BLL.csproj"
+            "/Users/jubair/Developer/Projects/DOT-net-final/BLL/BLL.csproj": {
+              "projectPath": "/Users/jubair/Developer/Projects/DOT-net-final/BLL/BLL.csproj"
             }
           }
         }

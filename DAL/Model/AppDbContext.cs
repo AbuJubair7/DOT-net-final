@@ -5,17 +5,21 @@ namespace DAL.Model
 {
 	public class AppDbContext : DbContext
 	{
-        
         public DbSet<Campaign> Campaigns { get; set; }
         public DbSet<Conversion> Conversions { get; set; }
-        public AppDbContext() { }
+
+        public AppDbContext()
+        {
+        }
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseNpgsql(DataAccessFactory.CONNECTION_STRING); // Replace with your default connection string
+            }
         }
 
     }
