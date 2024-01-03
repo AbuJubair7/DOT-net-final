@@ -12,17 +12,15 @@ public class DataAccessFactory
     internal static string CONNECTION_STRING = "Host=localhost;Port=5432;Database=ASP;Username=postgres;Password=7777;";
     public static IRepo<Campaign, string, Campaign>  CampaignData ()
     {
-        var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-        optionsBuilder.UseNpgsql(DataAccessFactory.CONNECTION_STRING);
-        return new CampaignRepo(optionsBuilder.Options);
+        
+        return new CampaignRepo(DataAccessFactory.CreateOptions());
     }
     public static IRepo<Conversion, string, Conversion> ConversionData()
     {
-        var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
-        optionsBuilder.UseNpgsql(DataAccessFactory.CONNECTION_STRING);
-        return new ConversionRepo(optionsBuilder.Options);
+        
+        return new ConversionRepo(DataAccessFactory.CreateOptions());
     }
-    private DbContextOptions<AppDbContext> createOptions()
+    private static DbContextOptions<AppDbContext> CreateOptions()
     {
         var optionsBuilder = new DbContextOptionsBuilder<AppDbContext>();
         optionsBuilder.UseNpgsql(DataAccessFactory.CONNECTION_STRING);
