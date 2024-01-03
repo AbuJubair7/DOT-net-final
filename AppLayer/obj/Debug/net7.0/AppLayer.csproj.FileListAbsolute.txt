@@ -76,3 +76,4 @@
 /Users/jubair/Developer/Projects/DOT-net-final/AppLayer/obj/Debug/net7.0/AppLayer.pdb
 /Users/jubair/Developer/Projects/DOT-net-final/AppLayer/obj/Debug/net7.0/AppLayer.genruntimeconfig.cache
 /Users/jubair/Developer/Projects/DOT-net-final/AppLayer/obj/Debug/net7.0/ref/AppLayer.dll
+/Users/jubair/Developer/Projects/DOT-net-final/AppLayer/bin/Debug/net7.0/AutoMapper.dll
