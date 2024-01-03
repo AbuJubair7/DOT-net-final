@@ -10,12 +10,12 @@ namespace DAL;
 public class DataAccessFactory
 {
     internal static string CONNECTION_STRING = "Host=localhost;Port=5432;Database=ASP;Username=postgres;Password=7777;";
-    public static IRepo<Campaign, string, Campaign>  CampaignData ()
+    public static IRepo<Campaign, int, Campaign>  CampaignData ()
     {
         
         return new CampaignRepo(DataAccessFactory.CreateOptions());
     }
-    public static IRepo<Conversion, string, Conversion> ConversionData()
+    public static IRepo<Conversion, int, Conversion> ConversionData()
     {
         
         return new ConversionRepo(DataAccessFactory.CreateOptions());

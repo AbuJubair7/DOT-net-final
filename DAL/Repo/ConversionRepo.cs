@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repo
 {
-    public class ConversionRepo : Repo, IRepo<Conversion, string, Conversion>
+    public class ConversionRepo : Repo, IRepo<Conversion, int, Conversion>
     {
         public ConversionRepo(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -18,7 +18,7 @@ namespace DAL.Repo
             return context.SaveChanges() > 0 ? obj : null;
         }
 
-        public bool Delete(string id)
+        public bool Delete(int id)
         {
             var obj = Get(id);
             context.Conversions.Remove(obj);
@@ -30,14 +30,14 @@ namespace DAL.Repo
             return context.Conversions.ToList();
         }
 
-        public Conversion Get(string id)
+        public Conversion Get(int id)
         {
-            return context.Conversions.Find(id);
+            return context.Conversions.FirstOrDefault((c => c.ID == id));
         }
 
         public Conversion Update(Conversion obj)
         {
-            var con = Get(obj.CampaignId.ToString());
+            var con = Get(obj.ID);
             context.Entry(con).CurrentValues.SetValues(obj);
             return context.SaveChanges() > 0 ? obj : null;
         }
