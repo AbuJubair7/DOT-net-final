@@ -5,40 +5,22 @@ using System.Threading.Tasks;
 using BLL.DTOs;
 using BLL.Services;
 using Microsoft.AspNetCore.Mvc;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace AppLayer.Controllers
 {
-
     [Controller]
-    [Route("campaign")]
-    public class CampaignController : Controller
+    [Route("report")]
+    public class ReportController : Controller
     {
-        // GET: api/values
+        // GET: report
         [HttpGet]
         public IActionResult Get()
         {
             try
             {
-                var data = CampaignService.Get();
-                return Ok(data);
-            }
-            catch(Exception e)
-            {
-                return StatusCode(500, $"Internal server error: {e.Message}");
-            }
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-
-            try
-            {
-                var data = CampaignService.Get(id);
+                var data = ReportService.Get();
                 return Ok(data);
             }
             catch (Exception e)
@@ -47,58 +29,52 @@ namespace AppLayer.Controllers
             }
         }
 
-        // POST api/values
-        [HttpPost]
-        public IActionResult Post([FromBody]CampaignDTO data)
+        // GET: report/5
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
         {
-            Console.WriteLine(data.Title);
-            Console.WriteLine(data.Status);
-            Console.WriteLine(data.TotalSent);
             try
             {
-                data.AnalyticId = 0;
-                data.Date = DateTime.UtcNow;
-                var analytic = new AnalyticDTO
+                var data = ReportService.Get(id);
+                return Ok(data);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, $"Internal server error: {e.Message}");
+            }
+        }
+
+        // POST: report
+        [HttpPost]
+        public IActionResult Post([FromBody] ReportDTO data)
+        {
+            try
+            {
+                data.StartDate = DateTime.UtcNow;
+                data.EndDate = DateTime.UtcNow;
+                var ret = ReportService.Create(data);
+                if (ret != null)
                 {
-                    NewLeadRate = 0,
-                    ClosedWonRate = 0,
-                    ClosedLostRate = 0
-                };
-                var newAna = AnalyticService.Create(analytic);
-                if (newAna != null)
-                {
-                    data.AnalyticId = newAna.ID;
-                    var ret = CampaignService.Create(data);
-                    if (ret != null)
-                    {
-                        return Ok("Success");
-                    }
-                    else
-                    {
-                        return StatusCode(500, $"Creation at server error");
-                    }
+                    return Ok("Success");
                 }
                 else
                 {
                     return StatusCode(500, $"Creation at server error");
                 }
-                    
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                Console.WriteLine(e.Message);
                 return StatusCode(500, $"Internal server error: {e.Message}");
             }
         }
 
-        // PUT api/values/5
+        // PATCH: report
         [HttpPatch]
-        public IActionResult Put([FromBody]CampaignDTO data)
+        public IActionResult Patch([FromBody] ReportDTO data)
         {
             try
             {
-                data.Date = DateTime.UtcNow;
-                var ret = CampaignService.Update(data);
+                var ret = ReportService.Update(data);
                 if (ret != null)
                 {
                     return Ok("Success");
@@ -114,26 +90,30 @@ namespace AppLayer.Controllers
             }
         }
 
-        // DELETE api/values/5
+        // DELETE: report/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             try
             {
-                bool ret = CampaignService.Delete(id);
+                bool ret = ReportService.Delete(id);
                 if (ret)
                 {
                     return Ok("Deleted");
-                } else
+                }
+                else
                 {
                     throw new Exception("Error on Deleting");
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return StatusCode(500, $"Internal server error: {e.Message}");
             }
         }
     }
+
+
 }
+
 
