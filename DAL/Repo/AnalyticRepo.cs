@@ -6,36 +6,36 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repo
 {
-    public class ConversionRepo : Repo, IRepo<Conversion, int, Conversion>
+    public class AnalyticRepo : Repo, IRepo<Analytic, int, Analytic>
     {
-        public ConversionRepo(DbContextOptions<AppDbContext> options) : base(options)
+        public AnalyticRepo(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
 
-        public Conversion Create(Conversion obj)
+        public Analytic Create(Analytic obj)
         {
-            context.Conversions.Add(obj);
+            context.Analytics.Add(obj);
             return context.SaveChanges() > 0 ? obj : null;
         }
 
         public bool Delete(int id)
         {
             var obj = Get(id);
-            context.Conversions.Remove(obj);
+            context.Analytics.Remove(obj);
             return context.SaveChanges() > 0 ? true : false;
         }
 
-        public List<Conversion> Get()
+        public List<Analytic> Get()
         {
-            return context.Conversions.ToList();
+            return context.Analytics.ToList();
         }
 
-        public Conversion Get(int id)
+        public Analytic Get(int id)
         {
-            return context.Conversions.FirstOrDefault((c => c.ID == id));
+            return context.Analytics.FirstOrDefault((c => c.ID == id));
         }
 
-        public Conversion Update(Conversion obj)
+        public Analytic Update(Analytic obj)
         {
             var con = Get(obj.ID);
             context.Entry(con).CurrentValues.SetValues(obj);

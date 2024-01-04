@@ -11,6 +11,7 @@
     <None Remove="Model\Entity\" />
     <None Remove="Interfaces\" />
     <None Remove="Repo\" />
+    <None Remove="Repo\AnalyticRepo" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />

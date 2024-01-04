@@ -6,7 +6,10 @@ namespace DAL.Model
 	public class AppDbContext : DbContext
 	{
         public DbSet<Campaign> Campaigns { get; set; }
-        public DbSet<Conversion> Conversions { get; set; }
+        public DbSet<Analytic> Analytics { get; set; }
+        public DbSet<Report> Reports { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Company> Companies { get; set; }
 
         public AppDbContext()
         {
