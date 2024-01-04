@@ -5,14 +5,16 @@ using System.ComponentModel.DataAnnotations;
 
 namespace BLL.DTOs
 {
-	public class ConversionDTO
-	{
+	public class AnalyticDTO
+    {
         public int ID { get; set; }
 
         [Required]
-        public int CampaignId { get; set; }
+        public float NewLeadRate { get; set; }
         [Required]
-        public float ConversionRate { get; set; }
+        public float ClosedWonRate { get; set; }
+        [Required]
+        public float ClosedLostRate { get; set; }
 
     }
 }

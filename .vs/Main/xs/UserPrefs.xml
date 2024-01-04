@@ -1,18 +1,29 @@
 ﻿<Properties StartupConfiguration="{68F53440-EFEB-4E32-BD2F-5141C9A166FD}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.AppLayer PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DAL/DataAccessFactory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DAL/Model/AppDbContext.cs">
     <Files>
-      <File FileName="BLL/Services/CampaignService.cs" Line="18" Column="33" />
-      <File FileName="DAL/DataAccessFactory.cs" Line="15" Column="9" />
+      <File FileName="DAL/Model/Entity/Campaign.cs" Line="13" Column="13" />
+      <File FileName="AppLayer/Controllers/CampaignController.cs" Line="20" Column="18" />
+      <File FileName="DAL/Model/Entity/Report.cs" Line="22" Column="19" />
+      <File FileName="AppLayer/Controllers/ReportController.cs" Line="55" Column="54" />
+      <File FileName="DAL/Model/Entity/Company.cs" Line="1" Column="1" />
+      <File FileName="DAL/Model/Entity/Employee.cs" Line="27" Column="1" />
+      <File FileName="BLL/DTOs/EmployeeDTO.cs" Line="1" Column="1" />
+      <File FileName="AppLayer/Controllers/EmployeeController.cs" Line="53" Column="49" />
+      <File FileName="DAL/Model/Entity/Analytic.cs" Line="15" Column="19" />
+      <File FileName="DAL/Model/AppDbContext.cs" Line="16" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Main">
+          <Node name="Main" expanded="True">
+            <Node name="AppLayer" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
             <Node name="BLL" expanded="True">
               <Node name="DTOs" expanded="True" />
               <Node name="Services" expanded="True" />
@@ -22,13 +33,12 @@
                 <Node name="Entity" expanded="True" />
               </Node>
               <Node name="Repo" expanded="True" />
-              <Node name="DataAccessFactory.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.AppLayer PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

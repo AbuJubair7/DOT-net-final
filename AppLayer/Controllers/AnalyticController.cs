@@ -5,40 +5,22 @@ using System.Threading.Tasks;
 using BLL.DTOs;
 using BLL.Services;
 using Microsoft.AspNetCore.Mvc;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace AppLayer.Controllers
 {
-
     [Controller]
-    [Route("campaign")]
-    public class CampaignController : Controller
+    [Route("analytic")]
+    public class AnalyticController : Controller
     {
-        // GET: api/values
+        // GET: analytic
         [HttpGet]
         public IActionResult Get()
         {
             try
             {
-                var data = CampaignService.Get();
-                return Ok(data);
-            }
-            catch(Exception e)
-            {
-                return StatusCode(500, $"Internal server error: {e.Message}");
-            }
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public IActionResult Get(int id)
-        {
-
-            try
-            {
-                var data = CampaignService.Get(id);
+                var data = AnalyticService.Get();
                 return Ok(data);
             }
             catch (Exception e)
@@ -47,58 +29,51 @@ namespace AppLayer.Controllers
             }
         }
 
-        // POST api/values
-        [HttpPost]
-        public IActionResult Post([FromBody]CampaignDTO data)
+        // GET: analytic/5
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
         {
-            Console.WriteLine(data.Title);
-            Console.WriteLine(data.Status);
-            Console.WriteLine(data.TotalSent);
             try
             {
-                data.AnalyticId = 0;
-                data.Date = DateTime.UtcNow;
-                var analytic = new AnalyticDTO
+                var data = AnalyticService.Get(id);
+                return Ok(data);
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, $"Internal server error: {e.Message}");
+            }
+        }
+
+        // POST: analytic
+        [HttpPost]
+        public IActionResult Post([FromBody] AnalyticDTO data)
+        {
+            Console.WriteLine("Inside analytic");
+            try
+            {
+                var ret = AnalyticService.Create(data);
+                if (ret != null)
                 {
-                    NewLeadRate = 0,
-                    ClosedWonRate = 0,
-                    ClosedLostRate = 0
-                };
-                var newAna = AnalyticService.Create(analytic);
-                if (newAna != null)
-                {
-                    data.AnalyticId = newAna.ID;
-                    var ret = CampaignService.Create(data);
-                    if (ret != null)
-                    {
-                        return Ok("Success");
-                    }
-                    else
-                    {
-                        return StatusCode(500, $"Creation at server error");
-                    }
+                    return Ok("Success");
                 }
                 else
                 {
                     return StatusCode(500, $"Creation at server error");
                 }
-                    
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                Console.WriteLine(e.Message);
                 return StatusCode(500, $"Internal server error: {e.Message}");
             }
         }
 
-        // PUT api/values/5
+        // PATCH: analytic
         [HttpPatch]
-        public IActionResult Put([FromBody]CampaignDTO data)
+        public IActionResult Patch([FromBody] AnalyticDTO data)
         {
             try
             {
-                data.Date = DateTime.UtcNow;
-                var ret = CampaignService.Update(data);
+                var ret = AnalyticService.Update(data);
                 if (ret != null)
                 {
                     return Ok("Success");
@@ -114,26 +89,28 @@ namespace AppLayer.Controllers
             }
         }
 
-        // DELETE api/values/5
+        // DELETE: analytic/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             try
             {
-                bool ret = CampaignService.Delete(id);
+                bool ret = AnalyticService.Delete(id);
                 if (ret)
                 {
                     return Ok("Deleted");
-                } else
+                }
+                else
                 {
                     throw new Exception("Error on Deleting");
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 return StatusCode(500, $"Internal server error: {e.Message}");
             }
         }
     }
+
 }
 
