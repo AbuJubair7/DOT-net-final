@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DAL.Model.Entity
 {
@@ -12,7 +13,13 @@ namespace DAL.Model.Entity
 		[Required]
 		public bool Status { get; set; }
 		[Required]
+		public int TotalSent { get; set; }
+		
+		public int AnalyticId { get; set; }
+		
 		public DateTime Date { get; set; }
+
+		//public virtual Analytic Analytic { get; set; }
 
 	}
 }

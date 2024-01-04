@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repo
 {
-    public class CampaignRepo : Repo, IRepo<Campaign, string, Campaign>
+    public class CampaignRepo : Repo, IRepo<Campaign, int, Campaign>
     {
        
         public CampaignRepo(DbContextOptions<AppDbContext> options) : base(options)
@@ -19,7 +19,7 @@ namespace DAL.Repo
             return context.SaveChanges() > 0 ? obj : null;
         }
 
-        public bool Delete(string id)
+        public bool Delete(int id)
         {
             var campagin = Get(id);
             context.Campaigns.Remove(campagin);
@@ -31,15 +31,15 @@ namespace DAL.Repo
             return context.Campaigns.ToList();
         }
 
-        public Campaign Get(string id)
+        public Campaign Get(int id)
         {
-            return context.Campaigns.Find(id);
+            return context.Campaigns.FirstOrDefault((c => c.Id == id));
 
         }
 
         public Campaign Update(Campaign obj)
         {
-            var camp = Get(obj.Title);
+            var camp = Get(obj.Id);
             context.Entry(camp).CurrentValues.SetValues(obj);
             return context.SaveChanges() > 0 ? obj : null;
         }
